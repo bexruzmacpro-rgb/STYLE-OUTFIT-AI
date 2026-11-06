@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="STYLE — shaxsiy AI stylist. Har kun uchun o'zingizga mos outfit toping.">
+  <title>STYLE — Your Personal AI Stylist</title>
+  <style>
+    :root{--bg:#f6f5f2;--ink:#171717;--muted:#77736d;--line:#e5e1da;--card:#fff;--accent:#c8ff45}
+    *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,Arial,sans-serif}
+    header{height:76px;padding:0 6vw;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);background:#f6f5f2}
+    .logo{font-size:27px;font-weight:900;letter-spacing:3px}.logo span{color:#7a9f12}
+    nav{display:flex;gap:28px;font-size:13px;font-weight:700}nav a{color:inherit;text-decoration:none}
+    .hero{padding:70px 6vw 54px;display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center}
+    .eyebrow{font-size:11px;letter-spacing:3px;font-weight:800;color:#718b20}
+    h1{font-size:clamp(48px,7vw,88px);line-height:.94;letter-spacing:-5px;margin:18px 0}
+    h1 em{font-family:Georgia,serif;font-weight:400}
+    .hero p{max-width:470px;color:var(--muted);font-size:16px;line-height:1.7}
+    .hero-art{min-height:390px;border-radius:5px;background:linear-gradient(135deg,#d6d0c4,#a9a294);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+    .hero-art:before{content:"";position:absolute;width:58%;height:115%;background:linear-gradient(110deg,#272724,#55534d 48%,#191919);border-radius:46% 46% 12% 12%;top:13%;left:21%;transform:rotate(-7deg)}
+    .hero-art:after{content:"STYLE / 001";position:absolute;bottom:22px;left:24px;font-size:11px;letter-spacing:3px;color:#fff;font-weight:800}
+    .art-label{position:absolute;z-index:1;right:22px;top:22px;background:var(--accent);padding:10px 13px;font-size:10px;font-weight:900;letter-spacing:1px}
+    .section{padding:30px 6vw 75px}.section-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:24px}
+    h2{font-size:34px;letter-spacing:-1.5px;margin:8px 0}.sub{color:var(--muted);font-size:14px}
+    .studio{display:grid;grid-template-columns: .85fr 1.15fr;gap:22px}
+    .panel,.result{background:var(--card);border:1px solid var(--line);padding:26px}
+    .panel h3{margin:0 0 22px;font-size:19px}.field{margin:18px 0}.field label{display:block;font-size:11px;font-weight:800;letter-spacing:1.2px;margin-bottom:9px;color:#5f5b55}
+    select{width:100%;padding:14px;border:1px solid var(--line);background:#fff;font-size:14px;border-radius:0;color:var(--ink)}
+    .chips{display:flex;flex-wrap:wrap;gap:8px}.chip{border:1px solid var(--line);padding:10px 13px;font-size:12px;background:#fff;cursor:pointer}.chip.active{background:var(--ink);color:white;border-color:var(--ink)}
+    .primary{width:100%;border:0;background:var(--ink);color:#fff;padding:16px;font-weight:800;letter-spacing:1px;cursor:pointer;margin-top:12px}.primary:hover{background:#39421f}
+    .result{min-height:390px;display:flex;flex-direction:column;justify-content:space-between}
+    .result-top{display:flex;justify-content:space-between;align-items:center}.tag{font-size:10px;font-weight:900;letter-spacing:1.4px;background:var(--accent);padding:8px 10px}
+    .outfit{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:25px 0}
+    .piece{background:#f1efe9;min-height:155px;display:flex;flex-direction:column;justify-content:end;padding:13px}
+    .piece .emoji{font-size:42px;margin-bottom:auto}.piece b{font-size:12px}.piece small{color:var(--muted);margin-top:4px}
+    .advice{font-size:14px;line-height:1.7;color:#605d57;background:#f7f6f2;padding:15px}
+    .actions{display:flex;gap:10px;margin-top:14px}.secondary{flex:1;background:#fff;border:1px solid var(--line);padding:13px;cursor:pointer;font-weight:700}
+    .saved{margin-top:18px;color:var(--muted);font-size:12px}
+    footer{padding:25px 6vw;border-top:1px solid var(--line);display:flex;justify-content:space-between;color:var(--muted);font-size:11px;letter-spacing:1px}
+    @media(max-width:760px){header{padding:0 5vw}nav{gap:12px}nav a:nth-child(2){display:none}.hero{grid-template-columns:1fr;padding:48px 5vw 30px;gap:25px}.hero-art{min-height:280px}h1{letter-spacing:-3px}.section{padding:25px 5vw 50px}.studio{grid-template-columns:1fr}.outfit{gap:7px}.piece{padding:9px;min-height:135px}.piece .emoji{font-size:34px}footer{padding:20px 5vw;gap:10px;flex-wrap:wrap}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="logo">STYLE<span>.</span></div>
+  <nav><a href="#studio">AI STYLIST</a><a href="#about">ABOUT</a><a href="#saved">SAVED LOOKS</a></nav>
+</header>
+<main>
+  <section class="hero" id="about">
+    <div>
+      <div class="eyebrow">PERSONAL STYLE, REIMAGINED</div>
+      <h1>Dress like<br><em>you mean it.</em></h1>
+      <p>Kayfiyatingiz, vaziyatingiz va yoqtirgan ranglaringizga mos obrazni toping. STYLE sizga yangi kombinatsiyalar uchun ilhom beradi.</p>
+    </div>
+    <div class="hero-art"><div class="art-label">AI STYLE STUDIO</div></div>
+  </section>
+  <section class="section" id="studio">
+    <div class="section-head"><div><div class="eyebrow">THE OUTFIT GENERATOR</div><h2>Find your look.</h2><div class="sub">Bir necha tanlov — yangi obraz tayyor.</div></div></div>
+    <div class="studio">
+      <div class="panel">
+        <h3>Styling preferences</h3>
+        <div class="field"><label>WHO IS THIS LOOK FOR?</label><div class="chips" id="gender"><button class="chip active" data-value="unisex">Unisex</button><button class="chip" data-value="men">Erkaklar</button><button class="chip" data-value="women">Ayollar</button></div></div>
+        <div class="field"><label>OCCASION</label><select id="occasion"><option value="daily">Kundalik</option><option value="study">O‘qish / ish</option><option value="sport">Sport</option><option value="party">Tadbir / uchrashuv</option></select></div>
+        <div class="field"><label>YOUR STYLE</label><select id="style"><option value="street">Streetwear</option><option value="minimal">Minimal</option><option value="classic">Classic</option><option value="sporty">Sporty</option></select></div>
+        <div class="field"><label>COLOR MOOD</label><div class="chips" id="color"><button class="chip active" data-value="neutral">Neutral</button><button class="chip" data-value="dark">Dark</button><button class="chip" data-value="bright">Bright</button></div></div>
+        <button class="primary" id="generate">GENERATE MY OUTFIT ↗</button>
+      </div>
+      <div class="result" aria-live="polite">
+        <div class="result-top"><div class="eyebrow">YOUR STYLE SUGGESTION</div><div class="tag">LOOK / 001</div></div>
+        <div>
+          <h2 id="lookTitle">Clean everyday fit</h2>
+          <div class="outfit" id="outfit">
+            <div class="piece"><div class="emoji">👕</div><b>Basic T-shirt</b><small>Top</small></div>
+            <div class="piece"><div class="emoji">👖</div><b>Straight jeans</b><small>Bottom</small></div>
+            <div class="piece"><div class="emoji">👟</div><b>Classic sneakers</b><small>Shoes</small></div>
+          </div>
+          <div class="advice" id="advice">Oddiy ranglarni tanlab, bitta aksessuar bilan obrazga xarakter qo‘shing.</div>
+        </div>
+        <div class="actions"><button class="secondary" id="save">♡ Save look</button><button class="secondary" id="again">↻ Another look</button></div>
+        <div class="saved" id="saved">Saved looks: 0</div>
+      </div>
+    </div>
+  </section>
+</main>
+<footer><span>STYLE. — YOUR PERSONAL STYLE SPACE</span><span>MADE TO INSPIRE · 2026</span></footer>
+<script>
+const $ = id => document.getElementById(id);
+let gender='unisex', color='neutral', saved=JSON.parse(localStorage.getItem('styleSaved')||'[]'), current=0;
+function choose(group, setter){$(group).querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{ $(group).querySelectorAll('button').forEach(x=>x.classList.remove('active')); b.classList.add('active'); setter(b.dataset.value); }));}
+choose('gender',v=>gender=v); choose('color',v=>color=v);
+const looks = {
+ street:{daily:['Relaxed street fit',['Oversize hoodie','Cargo trousers','Retro sneakers'],['🧥','👖','👟']],study:['Smart street fit',['Plain sweatshirt','Straight trousers','Clean sneakers'],['👕','👖','👟']],sport:['Active street fit',['Sport tee','Track pants','Running shoes'],['👕','🩳','👟']],party:['Statement street fit',['Graphic jacket','Dark denim','High-top sneakers'],['🧥','👖','👟']]},
+ minimal:{daily:['Quiet minimal look',['Plain cotton tee','Straight-leg pants','White sneakers'],['👕','👖','👟']],study:['Modern minimal look',['Oxford shirt','Tailored trousers','Loafers'],['👔','👖','👞']],sport:['Minimal active look',['Training top','Tapered joggers','Neutral trainers'],['👕','🩳','👟']],party:['Minimal evening look',['Structured shirt','Dark tailored pants','Leather shoes'],['👔','👖','👞']]},
+ classic:{daily:['Relaxed classic look',['Knit polo','Chino trousers','Leather sneakers'],['👕','👖','👟']],study:['Classic smart look',['Button-up shirt','Tailored trousers','Loafers'],['👔','👖','👞']],sport:['Classic comfort look',['Polo sport top','Track trousers','Training shoes'],['👕','🩳','👟']],party:['Polished evening look',['Blazer','Pressed trousers','Dress shoes'],['🧥','👖','👞']]},
+ sporty:{daily:['Sporty everyday look',['Zip sweatshirt','Joggers','Running sneakers'],['🧥','🩳','👟']],study:['Sport smart look',['Clean polo','Tapered pants','Minimal trainers'],['👕','👖','👟']],sport:['Performance-ready look',['Breathable training tee','Track shorts','Running shoes'],['👕','🩳','👟']],party:['Sport luxe look',['Premium track jacket','Tapered trousers','Statement sneakers'],['🧥','👖','👟']]}
+};
+function render(){
+ const occ=$('occasion').value, sty=$('style').value, data=looks[sty][occ], palette={neutral:'oq, kulrang va bej',dark:'qora va to‘q kulrang',bright:'yorqin ranglar'}[color];
+ $('lookTitle').textContent=data[0];
+ $('outfit').innerHTML=data[1].map((x,i)=>`<div class="piece"><div class="emoji">${data[2][i]}</div><b>${x}</b><small>${['Top','Bottom','Shoes'][i]}</small></div>`).join('');
+ $('advice').textContent=`Rang tavsiyasi: ${palette}. ${gender==='women'?'Aksessuar yoki sumka bilan obrazni yakunlang.':gender==='men'?'Soat yoki kamar kabi sodda aksessuar tanlang.':'Obrazni bitta sodda aksessuar bilan yakunlang.'} Bu kombinatsiya — boshlang‘ich ilhom; o‘zingizdagi kiyimlar bilan moslashtiring.`;
+ current++; document.querySelector('.tag').textContent='LOOK / '+String(current).padStart(3,'0');
+}
+function updateSaved(){ $('saved').textContent='Saved looks: '+saved.length; }
+$('generate').onclick=render; $('again').onclick=render;
+$('save').onclick=()=>{saved.push({title:$('lookTitle').textContent,items:[...$('outfit').querySelectorAll('b')].map(x=>x.textContent)});localStorage.setItem('styleSaved',JSON.stringify(saved));updateSaved();$('save').textContent='✓ Saved';setTimeout(()=>$('save').textContent='♡ Save look',900);};
+updateSaved();
+</script>
+</body>
+</html>
